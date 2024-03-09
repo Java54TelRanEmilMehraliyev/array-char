@@ -5,6 +5,16 @@ public class ArrayChar {
    public ArrayChar(char[] array) {
 	  this.array = array;
    }
+   public int countChars(char character) {
+	   int count = 0;
+	   for(char c: array) {
+		   if(c == character) {
+			   count++;
+		   }
+	   }
+	   return count;
+   }
+   
    public int compareTo(ArrayChar another) {
 	   int length = Math.min(this.array.length, another.array.length); 
 	   int index = 0;

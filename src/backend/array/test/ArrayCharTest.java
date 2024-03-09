@@ -38,5 +38,14 @@ class ArrayCharTest {
 		assertEquals(3,arrayChar1.lastIndexOf('2'));
 		assertEquals(-1,arrayChar1.lastIndexOf('5'));
 	}
+	@Test
+	void countCharsTest() {
+		char [] ar1 = {'a','4','c','r','e','h','a','b','r'};
+		ArrayChar arrayChar1 = new ArrayChar(ar1);
+		assertEquals(2, arrayChar1.countChars('a'));
+		assertEquals(1, arrayChar1.countChars('c'));
+				}
+	}
 
-}
+
+
