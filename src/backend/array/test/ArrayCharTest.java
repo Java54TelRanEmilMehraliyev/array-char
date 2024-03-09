@@ -1,6 +1,8 @@
 package backend.array.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
@@ -45,7 +47,29 @@ class ArrayCharTest {
 		assertEquals(2, arrayChar1.countChars('a'));
 		assertEquals(1, arrayChar1.countChars('c'));
 				}
-	}
+    @Test
+    void compareToIgnoreCaseTest() {
+    	String str1 = "Hello World";
+    	String str2 = "HELLO WORLD";
+    	char [] charArray1 = str1.toCharArray();
+    	char [] charArray2 = str2.toCharArray();
+    	
+    	ArrayChar arrayChar1 = new ArrayChar(charArray1);
+    	ArrayChar arrayChar2 = new ArrayChar(charArray2);
+    	assertEquals(0, arrayChar1.compareToIgnoreCase(arrayChar2));
+    }
+    @Test
+    void containsTest() {
+    	String str1 = "Emil dont stop! you are the best!";
+    	char [] charArray1 = str1.toCharArray();
+    	char [] comp = {'A','E','D','F','Q','O','F'};
+    	ArrayChar arrayChar1 = new ArrayChar(charArray1);
+    	ArrayChar arrayChar2 = new ArrayChar(comp);
+    	assertTrue(arrayChar1.contains('a'));
+    	assertFalse(arrayChar2.contains('Z'));
+    }
+}
+
 
 
 
