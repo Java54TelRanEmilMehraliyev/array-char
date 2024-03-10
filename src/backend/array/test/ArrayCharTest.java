@@ -68,6 +68,32 @@ class ArrayCharTest {
     	assertTrue(arrayChar1.contains('a'));
     	assertFalse(arrayChar2.contains('Z'));
     }
+    @Test
+    void equals() {
+    	String name = "Emil";
+    	String surname = "Mehraliyev";
+    	char [] NameChars = name.toCharArray();
+    	char [] SurnameChars = surname.toCharArray();
+    	ArrayChar arrayChar1 = new ArrayChar(NameChars);
+    	ArrayChar arrayChar2 = new ArrayChar(SurnameChars);
+    	assertFalse(arrayChar1.equals(arrayChar2));
+    	
+    	char [] emptyArray = new char[0];
+    	ArrayChar emptyArrayChar = new ArrayChar(emptyArray);
+    	assertFalse(arrayChar1.equals(emptyArrayChar));
+    	}
+    @Test
+    void equalsIgnoreCase() {
+    	String name = "Hello";
+    	String nick = "HELLO";
+    	String upperCaseName = name.toUpperCase();
+    	String upperCaseNick = nick.toUpperCase();    	
+    	char [] nameChar = upperCaseName.toCharArray();
+    	char [] nickChar = upperCaseNick.toCharArray();
+        ArrayChar arrayChar1 = new ArrayChar(nameChar);
+    	ArrayChar arrayChar2 = new ArrayChar(nickChar);
+    	assertTrue(arrayChar1.equalsIgnoreCase(arrayChar2));    	
+    }
 }
 
 

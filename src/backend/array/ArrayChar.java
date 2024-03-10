@@ -64,16 +64,26 @@ public class ArrayChar {
    }
    public boolean equals(ArrayChar another) {
       if(this.array.length != another.array.length) {
-    	  System.out.println("false");
     	  return false;
       }
       for (int i = 0; i < this.array.length;i++) {
     	  if(this.array[i] != another.array[i]) {
-    		  System.out.println("false");
     		  return false;
     	  }
       }
-      System.out.println("true");
       return true;
+   }
+   public boolean equalsIgnoreCase(ArrayChar another) {
+	   if(this.array.length != another.array.length) {
+		   return false;
+	   }
+	   for (int i = 0; i < this.array.length; i++) {
+		  char char1 = Character.toUpperCase(this.array[i]);
+		   char char2 = Character.toUpperCase(another.array[i]);
+			  if(char1 != char2) {
+				  return false;
+		   }
+	   }
+	   return true;
    }
 }
